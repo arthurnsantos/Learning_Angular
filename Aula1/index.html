@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+
+    <h2>Sobre</h2>
+    <p>Esse é um projeto dos cursos de férias da Facens, feito por {{author}}</p>
+
+    <input type="text" placeholder="digite aqui seu nome" ng-model="nomeDoDonoDoJarJarBinks">
+    <button ng-click="jarJarBinks()">Clique aqui para receber seu jarJarBinks</button>
+
+    <h1>Personagens Star Wars</h1>
+    <ul>    <!--ng-show="character.jedi"-->
+            <!--for each     item in array                                       item.atributo--> 
+        <li  ng-repeat="character in characters" >{{$index+1}} - {{character.name}} {{character.jedi ? 'é um jedi':'não é um jedi' }}</li>
+    </ul>
+    <script src="index.js"></script>
+</body>
+</html>

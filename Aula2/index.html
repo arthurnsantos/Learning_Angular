@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="index.js"></script>
+    <link type="text/css" rel="stylesheet" href="normalize.css">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body ng-controller="MainCtrl"> 
+    <nav>
+        <ul style="list-style:none">
+            <p><li><a ng-click="showCharacters = !showCharacters">Rangers</a></li></p>
+            <p><li><a ng-click="showWorlds = !showWorlds">Zords</a> </li></p>
+            <p><li><a ng-click="showFilms = !showFilms">Filmes</a></li></p>
+            <p><li><a ng-click="showNavs = !showNavs">Series</a></li></p>
+            <p><li><a ng-click="showCriatures = !showCriatures">Viloes</a></li></p>
+        </ul>
+    </nav>
+    <section ng-if="showCharacters">
+        <h2>Rangers</h2>
+           <ul style="list-style:none">
+                <li ng-repeat="character in characters">
+                    <p>{{character.name}}</p>
+                 </li>
+            </ul>
+    </section>
+    <section ng-if="showWorlds">
+        <h2>Zords</h2>
+        <ul style="list-style:none">
+            <li ng-repeat="zord in zords">
+                <p>{{zord.name}}</p>
+            </li>
+        </ul>
+    </section>
+    <section ng-if="showFilms">
+        <h2>Filmes</h2>
+        <ul style="list-style:none">
+            <li ng-repeat="filme in filmes">
+                <p>{{filme.name}}</p>
+            </li>
+        </ul>
+    </section>
+    <section ng-if="showNavs">
+        <h2>Series</h2>
+        <ul style="list-style:none">
+            <li ng-repeat="serie in series">
+                <p>{{serie.name + " " + serie.ano + " " + serie.episodios}}</p>
+            </li>
+        </ul>
+    </section>
+    <section ng-if="showCriatures">
+        <h2>Viloes</h2>
+        <ul style="list-style:none">
+            <li ng-repeat="vilao in viloes">
+                <p>{{vilao.name}}</p>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
